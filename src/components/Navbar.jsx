@@ -6,12 +6,12 @@ import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const [statusTampil, setStatusTampil] = useState('tampil');
+  const [statusTampil, setStatusTampil] = useState("");
   function tampilMenu() {
-    if (statusTampil == '') {
-      setStatusTampil('tampil');
+    if (statusTampil == "") {
+      setStatusTampil("tampil");
     } else {
-      setStatusTampil('');
+      setStatusTampil("");
     }
   }
   return (
@@ -20,12 +20,7 @@ function Navbar() {
         <div className="logo">
           <Link to="/">Aldo Anthonius</Link>
         </div>
-        <button onClick={tampilMenu}>
-            {
-                statusTampil == '' ? (<FaBars />) : (<IoMdClose />)
-            }
-            
-        </button>
+        <button onClick={tampilMenu}>{statusTampil == "" ? <FaBars /> : <IoMdClose />}</button>
         <div className={`menu ${statusTampil}`} onClick={tampilMenu}>
           <ul>
             <li>
